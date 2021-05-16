@@ -18,6 +18,8 @@
 /lib
 /test-reports/
 build/Release
+cdk.context.json
+cdk.out
 coverage
 jspm_packages/
 junit.xml
@@ -50,5 +52,3 @@ yarn-error.log*
 !/test
 !/tsconfig.eslint.json
 !/tsconfig.jest.json
-cdk.context.json
-cdk.out
