@@ -18,7 +18,7 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-route53',
     '@aws-cdk/aws-secretsmanager',
   ],
-  gitignore: ['cdk.out', 'cdk.context.json'],
+  gitignore: ['cdk.out', 'cdk.context.json']
 
   // cdkDependencies: undefined,        /* Which AWS CDK modules (those that start with "@aws-cdk/") does this library require when consumed? */
   // cdkTestDependencies: undefined,    /* AWS CDK modules required for testing. */
