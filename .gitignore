@@ -51,3 +51,4 @@ yarn-error.log*
 !/tsconfig.eslint.json
 !/tsconfig.jest.json
 cdk.context.json
+cdk.out
