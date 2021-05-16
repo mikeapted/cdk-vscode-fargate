@@ -1,0 +1,1162 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Construct",
+          "version": "1.104.0"
+        }
+      },
+      "my-test-stack-vscode-aws-apted-io": {
+        "id": "my-test-stack-vscode-aws-apted-io",
+        "path": "my-test-stack-vscode-aws-apted-io",
+        "children": {
+          "Vpc": {
+            "id": "Vpc",
+            "path": "my-test-stack-vscode-aws-apted-io/Vpc",
+            "children": {
+              "PublicSubnet1": {
+                "id": "PublicSubnet1",
+                "path": "my-test-stack-vscode-aws-apted-io/Vpc/PublicSubnet1",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.104.0"
+                }
+              },
+              "PublicSubnet2": {
+                "id": "PublicSubnet2",
+                "path": "my-test-stack-vscode-aws-apted-io/Vpc/PublicSubnet2",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.104.0"
+                }
+              },
+              "PublicSubnet3": {
+                "id": "PublicSubnet3",
+                "path": "my-test-stack-vscode-aws-apted-io/Vpc/PublicSubnet3",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.104.0"
+                }
+              },
+              "PublicSubnet4": {
+                "id": "PublicSubnet4",
+                "path": "my-test-stack-vscode-aws-apted-io/Vpc/PublicSubnet4",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.104.0"
+                }
+              },
+              "PublicSubnet5": {
+                "id": "PublicSubnet5",
+                "path": "my-test-stack-vscode-aws-apted-io/Vpc/PublicSubnet5",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.104.0"
+                }
+              },
+              "PublicSubnet6": {
+                "id": "PublicSubnet6",
+                "path": "my-test-stack-vscode-aws-apted-io/Vpc/PublicSubnet6",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Resource",
+              "version": "1.104.0"
+            }
+          },
+          "MyVSCodeFargate": {
+            "id": "MyVSCodeFargate",
+            "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate",
+            "children": {
+              "HostedZone": {
+                "id": "HostedZone",
+                "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/HostedZone",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.104.0"
+                }
+              },
+              "Certificate": {
+                "id": "Certificate",
+                "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Certificate",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Certificate/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::CertificateManager::Certificate",
+                      "aws:cdk:cloudformation:props": {
+                        "domainName": "vscode.aws.apted.io",
+                        "domainValidationOptions": [
+                          {
+                            "domainName": "vscode.aws.apted.io",
+                            "hostedZoneId": "ZXCHXKBGOLSRQ"
+                          }
+                        ],
+                        "validationMethod": "DNS"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-certificatemanager.CfnCertificate",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-certificatemanager.Certificate",
+                  "version": "1.104.0"
+                }
+              },
+              "Cluster": {
+                "id": "Cluster",
+                "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Cluster",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Cluster/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ECS::Cluster",
+                      "aws:cdk:cloudformation:props": {}
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ecs.CfnCluster",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ecs.Cluster",
+                  "version": "1.104.0"
+                }
+              },
+              "EfsFileSystem": {
+                "id": "EfsFileSystem",
+                "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EFS::FileSystem",
+                      "aws:cdk:cloudformation:props": {
+                        "fileSystemTags": [
+                          {
+                            "key": "Name",
+                            "value": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem"
+                          }
+                        ],
+                        "lifecyclePolicies": [
+                          {
+                            "transitionToIa": "AFTER_30_DAYS"
+                          }
+                        ],
+                        "performanceMode": "generalPurpose"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-efs.CfnFileSystem",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "EfsSecurityGroup": {
+                    "id": "EfsSecurityGroup",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsSecurityGroup",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsSecurityGroup/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "groupDescription": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsSecurityGroup",
+                            "securityGroupEgress": [
+                              {
+                                "cidrIp": "0.0.0.0/0",
+                                "description": "Allow all outbound traffic by default",
+                                "ipProtocol": "-1"
+                              }
+                            ],
+                            "tags": [
+                              {
+                                "key": "Name",
+                                "value": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem"
+                              }
+                            ],
+                            "vpcId": "vpc-918b41e8"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroup",
+                          "version": "1.104.0"
+                        }
+                      },
+                      "from myteststackvscodeawsaptedioMyVSCodeFargateServiceSecurityGroup69FAAD3C:2049": {
+                        "id": "from myteststackvscodeawsaptedioMyVSCodeFargateServiceSecurityGroup69FAAD3C:2049",
+                        "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsSecurityGroup/from myteststackvscodeawsaptedioMyVSCodeFargateServiceSecurityGroup69FAAD3C:2049",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                          "aws:cdk:cloudformation:props": {
+                            "ipProtocol": "tcp",
+                            "description": "from myteststackvscodeawsaptedioMyVSCodeFargateServiceSecurityGroup69FAAD3C:2049",
+                            "fromPort": 2049,
+                            "groupId": {
+                              "Fn::GetAtt": [
+                                "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+                                "GroupId"
+                              ]
+                            },
+                            "sourceSecurityGroupId": {
+                              "Fn::GetAtt": [
+                                "MyVSCodeFargateServiceSecurityGroup632347FD",
+                                "GroupId"
+                              ]
+                            },
+                            "toPort": 2049
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroupIngress",
+                          "version": "1.104.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.SecurityGroup",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "EfsMountTarget1": {
+                    "id": "EfsMountTarget1",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsMountTarget1",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EFS::MountTarget",
+                      "aws:cdk:cloudformation:props": {
+                        "fileSystemId": {
+                          "Ref": "MyVSCodeFargateEfsFileSystemF58ED89A"
+                        },
+                        "securityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+                              "GroupId"
+                            ]
+                          }
+                        ],
+                        "subnetId": "subnet-510dd80b"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-efs.CfnMountTarget",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "EfsMountTarget2": {
+                    "id": "EfsMountTarget2",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsMountTarget2",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EFS::MountTarget",
+                      "aws:cdk:cloudformation:props": {
+                        "fileSystemId": {
+                          "Ref": "MyVSCodeFargateEfsFileSystemF58ED89A"
+                        },
+                        "securityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+                              "GroupId"
+                            ]
+                          }
+                        ],
+                        "subnetId": "subnet-ff7d439a"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-efs.CfnMountTarget",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "EfsMountTarget3": {
+                    "id": "EfsMountTarget3",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsMountTarget3",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EFS::MountTarget",
+                      "aws:cdk:cloudformation:props": {
+                        "fileSystemId": {
+                          "Ref": "MyVSCodeFargateEfsFileSystemF58ED89A"
+                        },
+                        "securityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+                              "GroupId"
+                            ]
+                          }
+                        ],
+                        "subnetId": "subnet-b089569c"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-efs.CfnMountTarget",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "EfsMountTarget4": {
+                    "id": "EfsMountTarget4",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsMountTarget4",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EFS::MountTarget",
+                      "aws:cdk:cloudformation:props": {
+                        "fileSystemId": {
+                          "Ref": "MyVSCodeFargateEfsFileSystemF58ED89A"
+                        },
+                        "securityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+                              "GroupId"
+                            ]
+                          }
+                        ],
+                        "subnetId": "subnet-808308c8"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-efs.CfnMountTarget",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "EfsMountTarget5": {
+                    "id": "EfsMountTarget5",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsMountTarget5",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EFS::MountTarget",
+                      "aws:cdk:cloudformation:props": {
+                        "fileSystemId": {
+                          "Ref": "MyVSCodeFargateEfsFileSystemF58ED89A"
+                        },
+                        "securityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+                              "GroupId"
+                            ]
+                          }
+                        ],
+                        "subnetId": "subnet-8a684cb6"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-efs.CfnMountTarget",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "EfsMountTarget6": {
+                    "id": "EfsMountTarget6",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsMountTarget6",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EFS::MountTarget",
+                      "aws:cdk:cloudformation:props": {
+                        "fileSystemId": {
+                          "Ref": "MyVSCodeFargateEfsFileSystemF58ED89A"
+                        },
+                        "securityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+                              "GroupId"
+                            ]
+                          }
+                        ],
+                        "subnetId": "subnet-11f79a1d"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-efs.CfnMountTarget",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-efs.FileSystem",
+                  "version": "1.104.0"
+                }
+              },
+              "Secret": {
+                "id": "Secret",
+                "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Secret",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Secret/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SecretsManager::Secret",
+                      "aws:cdk:cloudformation:props": {
+                        "generateSecretString": {}
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-secretsmanager.CfnSecret",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-secretsmanager.Secret",
+                  "version": "1.104.0"
+                }
+              },
+              "LogGroup": {
+                "id": "LogGroup",
+                "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/LogGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/LogGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "logGroupName": "/app/my-test-stack-vscode-aws-apted-io/MyVSCodeFargate",
+                        "retentionInDays": 60
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-logs.CfnLogGroup",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-logs.LogGroup",
+                  "version": "1.104.0"
+                }
+              },
+              "Service": {
+                "id": "Service",
+                "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service",
+                "children": {
+                  "LB": {
+                    "id": "LB",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                          "aws:cdk:cloudformation:props": {
+                            "loadBalancerAttributes": [
+                              {
+                                "key": "deletion_protection.enabled",
+                                "value": "false"
+                              }
+                            ],
+                            "scheme": "internet-facing",
+                            "securityGroups": [
+                              {
+                                "Fn::GetAtt": [
+                                  "MyVSCodeFargateServiceLBSecurityGroup8B96CF18",
+                                  "GroupId"
+                                ]
+                              }
+                            ],
+                            "subnets": [
+                              "subnet-510dd80b",
+                              "subnet-ff7d439a",
+                              "subnet-b089569c",
+                              "subnet-808308c8",
+                              "subnet-8a684cb6",
+                              "subnet-11f79a1d"
+                            ],
+                            "type": "application"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnLoadBalancer",
+                          "version": "1.104.0"
+                        }
+                      },
+                      "SecurityGroup": {
+                        "id": "SecurityGroup",
+                        "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/SecurityGroup",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/SecurityGroup/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                              "aws:cdk:cloudformation:props": {
+                                "groupDescription": "Automatically created Security Group for ELB myteststackvscodeawsaptedioMyVSCodeFargateServiceLBC7F484CA",
+                                "securityGroupIngress": [
+                                  {
+                                    "cidrIp": "0.0.0.0/0",
+                                    "ipProtocol": "tcp",
+                                    "fromPort": 443,
+                                    "toPort": 443,
+                                    "description": "Allow from anyone on port 443"
+                                  },
+                                  {
+                                    "cidrIp": "0.0.0.0/0",
+                                    "ipProtocol": "tcp",
+                                    "fromPort": 80,
+                                    "toPort": 80,
+                                    "description": "Allow from anyone on port 80"
+                                  }
+                                ],
+                                "vpcId": "vpc-918b41e8"
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroup",
+                              "version": "1.104.0"
+                            }
+                          },
+                          "to myteststackvscodeawsaptedioMyVSCodeFargateServiceSecurityGroup69FAAD3C:8443": {
+                            "id": "to myteststackvscodeawsaptedioMyVSCodeFargateServiceSecurityGroup69FAAD3C:8443",
+                            "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/SecurityGroup/to myteststackvscodeawsaptedioMyVSCodeFargateServiceSecurityGroup69FAAD3C:8443",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupEgress",
+                              "aws:cdk:cloudformation:props": {
+                                "groupId": {
+                                  "Fn::GetAtt": [
+                                    "MyVSCodeFargateServiceLBSecurityGroup8B96CF18",
+                                    "GroupId"
+                                  ]
+                                },
+                                "ipProtocol": "tcp",
+                                "description": "Load balancer to target",
+                                "destinationSecurityGroupId": {
+                                  "Fn::GetAtt": [
+                                    "MyVSCodeFargateServiceSecurityGroup632347FD",
+                                    "GroupId"
+                                  ]
+                                },
+                                "fromPort": 8443,
+                                "toPort": 8443
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroupEgress",
+                              "version": "1.104.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.SecurityGroup",
+                          "version": "1.104.0"
+                        }
+                      },
+                      "PublicListener": {
+                        "id": "PublicListener",
+                        "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/PublicListener",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/PublicListener/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                              "aws:cdk:cloudformation:props": {
+                                "defaultActions": [
+                                  {
+                                    "type": "forward",
+                                    "targetGroupArn": {
+                                      "Ref": "MyVSCodeFargateServiceLBPublicListenerECSGroup8180DE73"
+                                    }
+                                  }
+                                ],
+                                "loadBalancerArn": {
+                                  "Ref": "MyVSCodeFargateServiceLB7AC67843"
+                                },
+                                "certificates": [
+                                  {
+                                    "certificateArn": {
+                                      "Ref": "MyVSCodeFargateCertificateC28C16BA"
+                                    }
+                                  }
+                                ],
+                                "port": 443,
+                                "protocol": "HTTPS"
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnListener",
+                              "version": "1.104.0"
+                            }
+                          },
+                          "ECSGroup": {
+                            "id": "ECSGroup",
+                            "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/PublicListener/ECSGroup",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/PublicListener/ECSGroup/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                                  "aws:cdk:cloudformation:props": {
+                                    "healthCheckPath": "/login",
+                                    "port": 80,
+                                    "protocol": "HTTP",
+                                    "targetType": "ip",
+                                    "vpcId": "vpc-918b41e8"
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnTargetGroup",
+                                  "version": "1.104.0"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "@aws-cdk/aws-elasticloadbalancingv2.ApplicationTargetGroup",
+                              "version": "1.104.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-elasticloadbalancingv2.ApplicationListener",
+                          "version": "1.104.0"
+                        }
+                      },
+                      "PublicRedirectListener": {
+                        "id": "PublicRedirectListener",
+                        "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/PublicRedirectListener",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/PublicRedirectListener/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                              "aws:cdk:cloudformation:props": {
+                                "defaultActions": [
+                                  {
+                                    "type": "redirect",
+                                    "redirectConfig": {
+                                      "statusCode": "HTTP_301",
+                                      "port": "443",
+                                      "protocol": "HTTPS"
+                                    }
+                                  }
+                                ],
+                                "loadBalancerArn": {
+                                  "Ref": "MyVSCodeFargateServiceLB7AC67843"
+                                },
+                                "port": 80,
+                                "protocol": "HTTP"
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnListener",
+                              "version": "1.104.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-elasticloadbalancingv2.ApplicationListener",
+                          "version": "1.104.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-elasticloadbalancingv2.ApplicationLoadBalancer",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "DNS": {
+                    "id": "DNS",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/DNS",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/DNS/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Route53::RecordSet",
+                          "aws:cdk:cloudformation:props": {
+                            "name": "vscode.aws.apted.io.",
+                            "type": "A",
+                            "aliasTarget": {
+                              "hostedZoneId": {
+                                "Fn::GetAtt": [
+                                  "MyVSCodeFargateServiceLB7AC67843",
+                                  "CanonicalHostedZoneID"
+                                ]
+                              },
+                              "dnsName": {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "dualstack.",
+                                    {
+                                      "Fn::GetAtt": [
+                                        "MyVSCodeFargateServiceLB7AC67843",
+                                        "DNSName"
+                                      ]
+                                    }
+                                  ]
+                                ]
+                              }
+                            },
+                            "hostedZoneId": "ZXCHXKBGOLSRQ"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-route53.CfnRecordSet",
+                          "version": "1.104.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-route53.ARecord",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "LoadBalancerDNS": {
+                    "id": "LoadBalancerDNS",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LoadBalancerDNS",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnOutput",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "ServiceURL": {
+                    "id": "ServiceURL",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/ServiceURL",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnOutput",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "TaskDef": {
+                    "id": "TaskDef",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/TaskDef",
+                    "children": {
+                      "TaskRole": {
+                        "id": "TaskRole",
+                        "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/TaskDef/TaskRole",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/TaskDef/TaskRole/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                              "aws:cdk:cloudformation:props": {
+                                "assumeRolePolicyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "sts:AssumeRole",
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "Service": "ecs-tasks.amazonaws.com"
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "@aws-cdk/aws-iam.CfnRole",
+                              "version": "1.104.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-iam.Role",
+                          "version": "1.104.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/TaskDef/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ECS::TaskDefinition",
+                          "aws:cdk:cloudformation:props": {
+                            "containerDefinitions": [
+                              {
+                                "essential": true,
+                                "image": "ghcr.io/linuxserver/code-server",
+                                "mountPoints": [
+                                  {
+                                    "containerPath": "/efs",
+                                    "readOnly": true,
+                                    "sourceVolume": "myHomeVolume"
+                                  }
+                                ],
+                                "name": "web",
+                                "portMappings": [
+                                  {
+                                    "containerPort": 8443,
+                                    "protocol": "tcp"
+                                  }
+                                ],
+                                "logConfiguration": {
+                                  "logDriver": "awslogs",
+                                  "options": {
+                                    "awslogs-group": {
+                                      "Ref": "MyVSCodeFargateLogGroup67C6A39B"
+                                    },
+                                    "awslogs-stream-prefix": "app",
+                                    "awslogs-region": "us-east-1"
+                                  }
+                                },
+                                "secrets": [
+                                  {
+                                    "name": "PASSWORD",
+                                    "valueFrom": {
+                                      "Ref": "MyVSCodeFargateSecret6C64F286"
+                                    }
+                                  }
+                                ]
+                              }
+                            ],
+                            "cpu": "1024",
+                            "executionRoleArn": {
+                              "Fn::GetAtt": [
+                                "MyVSCodeFargateServiceTaskDefExecutionRoleE4DA0E0C",
+                                "Arn"
+                              ]
+                            },
+                            "family": "myteststackvscodeawsaptedioMyVSCodeFargateServiceTaskDef80F9C9F3",
+                            "memory": "2048",
+                            "networkMode": "awsvpc",
+                            "requiresCompatibilities": [
+                              "FARGATE"
+                            ],
+                            "taskRoleArn": {
+                              "Fn::GetAtt": [
+                                "MyVSCodeFargateServiceTaskDefTaskRole94C75545",
+                                "Arn"
+                              ]
+                            },
+                            "volumes": [
+                              {
+                                "name": "myHomeVolume",
+                                "efsVolumeConfiguration": {
+                                  "fileSystemId": {
+                                    "Ref": "MyVSCodeFargateEfsFileSystemF58ED89A"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ecs.CfnTaskDefinition",
+                          "version": "1.104.0"
+                        }
+                      },
+                      "web": {
+                        "id": "web",
+                        "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/TaskDef/web",
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ecs.ContainerDefinition",
+                          "version": "1.104.0"
+                        }
+                      },
+                      "ExecutionRole": {
+                        "id": "ExecutionRole",
+                        "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/TaskDef/ExecutionRole",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/TaskDef/ExecutionRole/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                              "aws:cdk:cloudformation:props": {
+                                "assumeRolePolicyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "sts:AssumeRole",
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "Service": "ecs-tasks.amazonaws.com"
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "@aws-cdk/aws-iam.CfnRole",
+                              "version": "1.104.0"
+                            }
+                          },
+                          "DefaultPolicy": {
+                            "id": "DefaultPolicy",
+                            "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/TaskDef/ExecutionRole/DefaultPolicy",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/TaskDef/ExecutionRole/DefaultPolicy/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                                  "aws:cdk:cloudformation:props": {
+                                    "policyDocument": {
+                                      "Statement": [
+                                        {
+                                          "Action": [
+                                            "logs:CreateLogStream",
+                                            "logs:PutLogEvents"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Fn::GetAtt": [
+                                              "MyVSCodeFargateLogGroup67C6A39B",
+                                              "Arn"
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "Action": [
+                                            "secretsmanager:GetSecretValue",
+                                            "secretsmanager:DescribeSecret"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Ref": "MyVSCodeFargateSecret6C64F286"
+                                          }
+                                        }
+                                      ],
+                                      "Version": "2012-10-17"
+                                    },
+                                    "policyName": "MyVSCodeFargateServiceTaskDefExecutionRoleDefaultPolicyF63D4CD8",
+                                    "roles": [
+                                      {
+                                        "Ref": "MyVSCodeFargateServiceTaskDefExecutionRoleE4DA0E0C"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "@aws-cdk/aws-iam.CfnPolicy",
+                                  "version": "1.104.0"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "@aws-cdk/aws-iam.Policy",
+                              "version": "1.104.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-iam.Role",
+                          "version": "1.104.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ecs.FargateTaskDefinition",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "Service": {
+                    "id": "Service",
+                    "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/Service",
+                    "children": {
+                      "Service": {
+                        "id": "Service",
+                        "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/Service/Service",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ECS::Service",
+                          "aws:cdk:cloudformation:props": {
+                            "cluster": {
+                              "Ref": "MyVSCodeFargateCluster0CA81BA8"
+                            },
+                            "deploymentConfiguration": {
+                              "maximumPercent": 200,
+                              "minimumHealthyPercent": 50
+                            },
+                            "desiredCount": 1,
+                            "enableEcsManagedTags": false,
+                            "healthCheckGracePeriodSeconds": 60,
+                            "launchType": "FARGATE",
+                            "loadBalancers": [
+                              {
+                                "targetGroupArn": {
+                                  "Ref": "MyVSCodeFargateServiceLBPublicListenerECSGroup8180DE73"
+                                },
+                                "containerName": "web",
+                                "containerPort": 8443
+                              }
+                            ],
+                            "networkConfiguration": {
+                              "awsvpcConfiguration": {
+                                "assignPublicIp": "ENABLED",
+                                "subnets": [
+                                  "subnet-510dd80b",
+                                  "subnet-ff7d439a",
+                                  "subnet-b089569c",
+                                  "subnet-808308c8",
+                                  "subnet-8a684cb6",
+                                  "subnet-11f79a1d"
+                                ],
+                                "securityGroups": [
+                                  {
+                                    "Fn::GetAtt": [
+                                      "MyVSCodeFargateServiceSecurityGroup632347FD",
+                                      "GroupId"
+                                    ]
+                                  }
+                                ]
+                              }
+                            },
+                            "platformVersion": "1.4.0",
+                            "taskDefinition": {
+                              "Ref": "MyVSCodeFargateServiceTaskDefBF622930"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ecs.CfnService",
+                          "version": "1.104.0"
+                        }
+                      },
+                      "SecurityGroup": {
+                        "id": "SecurityGroup",
+                        "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/Service/SecurityGroup",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/Service/SecurityGroup/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                              "aws:cdk:cloudformation:props": {
+                                "groupDescription": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/Service/SecurityGroup",
+                                "securityGroupEgress": [
+                                  {
+                                    "cidrIp": "0.0.0.0/0",
+                                    "description": "Allow all outbound traffic by default",
+                                    "ipProtocol": "-1"
+                                  }
+                                ],
+                                "vpcId": "vpc-918b41e8"
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroup",
+                              "version": "1.104.0"
+                            }
+                          },
+                          "from myteststackvscodeawsaptedioMyVSCodeFargateServiceLBSecurityGroupDCFD39CD:8443": {
+                            "id": "from myteststackvscodeawsaptedioMyVSCodeFargateServiceLBSecurityGroupDCFD39CD:8443",
+                            "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/Service/SecurityGroup/from myteststackvscodeawsaptedioMyVSCodeFargateServiceLBSecurityGroupDCFD39CD:8443",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                              "aws:cdk:cloudformation:props": {
+                                "ipProtocol": "tcp",
+                                "description": "Load balancer to target",
+                                "fromPort": 8443,
+                                "groupId": {
+                                  "Fn::GetAtt": [
+                                    "MyVSCodeFargateServiceSecurityGroup632347FD",
+                                    "GroupId"
+                                  ]
+                                },
+                                "sourceSecurityGroupId": {
+                                  "Fn::GetAtt": [
+                                    "MyVSCodeFargateServiceLBSecurityGroup8B96CF18",
+                                    "GroupId"
+                                  ]
+                                },
+                                "toPort": 8443
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroupIngress",
+                              "version": "1.104.0"
+                            }
+                          },
+                          "from myteststackvscodeawsaptedioMyVSCodeFargateEfsFileSystemEfsSecurityGroup30EE0BF0:2049": {
+                            "id": "from myteststackvscodeawsaptedioMyVSCodeFargateEfsFileSystemEfsSecurityGroup30EE0BF0:2049",
+                            "path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/Service/SecurityGroup/from myteststackvscodeawsaptedioMyVSCodeFargateEfsFileSystemEfsSecurityGroup30EE0BF0:2049",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                              "aws:cdk:cloudformation:props": {
+                                "ipProtocol": "tcp",
+                                "description": "from myteststackvscodeawsaptedioMyVSCodeFargateEfsFileSystemEfsSecurityGroup30EE0BF0:2049",
+                                "fromPort": 2049,
+                                "groupId": {
+                                  "Fn::GetAtt": [
+                                    "MyVSCodeFargateServiceSecurityGroup632347FD",
+                                    "GroupId"
+                                  ]
+                                },
+                                "sourceSecurityGroupId": {
+                                  "Fn::GetAtt": [
+                                    "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+                                    "GroupId"
+                                  ]
+                                },
+                                "toPort": 2049
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroupIngress",
+                              "version": "1.104.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.SecurityGroup",
+                          "version": "1.104.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ecs.FargateService",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ecs-patterns.ApplicationLoadBalancedFargateService",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "cdk-vscode-fargate.VSCodeFargate",
+              "version": "0.0.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "my-test-stack-vscode-aws-apted-io/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "my-test-stack-vscode-aws-apted-io/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnResource",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.104.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.104.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "@aws-cdk/core.App",
+      "version": "1.104.0"
+    }
+  }
+}

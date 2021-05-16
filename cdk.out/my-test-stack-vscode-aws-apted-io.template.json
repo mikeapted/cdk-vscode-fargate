@@ -1,0 +1,726 @@
+{
+  "Resources": {
+    "MyVSCodeFargateCertificateC28C16BA": {
+      "Type": "AWS::CertificateManager::Certificate",
+      "Properties": {
+        "DomainName": "vscode.aws.apted.io",
+        "DomainValidationOptions": [
+          {
+            "DomainName": "vscode.aws.apted.io",
+            "HostedZoneId": "ZXCHXKBGOLSRQ"
+          }
+        ],
+        "ValidationMethod": "DNS"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Certificate/Resource"
+      }
+    },
+    "MyVSCodeFargateCluster0CA81BA8": {
+      "Type": "AWS::ECS::Cluster",
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Cluster/Resource"
+      }
+    },
+    "MyVSCodeFargateEfsFileSystemF58ED89A": {
+      "Type": "AWS::EFS::FileSystem",
+      "Properties": {
+        "FileSystemTags": [
+          {
+            "Key": "Name",
+            "Value": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem"
+          }
+        ],
+        "LifecyclePolicies": [
+          {
+            "TransitionToIA": "AFTER_30_DAYS"
+          }
+        ],
+        "PerformanceMode": "generalPurpose"
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/Resource"
+      }
+    },
+    "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsSecurityGroup",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem"
+          }
+        ],
+        "VpcId": "vpc-918b41e8"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsSecurityGroup/Resource"
+      }
+    },
+    "MyVSCodeFargateEfsFileSystemEfsSecurityGroupfrommyteststackvscodeawsaptedioMyVSCodeFargateServiceSecurityGroup69FAAD3C2049F22070B4": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "IpProtocol": "tcp",
+        "Description": "from myteststackvscodeawsaptedioMyVSCodeFargateServiceSecurityGroup69FAAD3C:2049",
+        "FromPort": 2049,
+        "GroupId": {
+          "Fn::GetAtt": [
+            "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+            "GroupId"
+          ]
+        },
+        "SourceSecurityGroupId": {
+          "Fn::GetAtt": [
+            "MyVSCodeFargateServiceSecurityGroup632347FD",
+            "GroupId"
+          ]
+        },
+        "ToPort": 2049
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsSecurityGroup/from myteststackvscodeawsaptedioMyVSCodeFargateServiceSecurityGroup69FAAD3C:2049"
+      }
+    },
+    "MyVSCodeFargateEfsFileSystemEfsMountTarget1C115DFEE": {
+      "Type": "AWS::EFS::MountTarget",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "MyVSCodeFargateEfsFileSystemF58ED89A"
+        },
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+              "GroupId"
+            ]
+          }
+        ],
+        "SubnetId": "subnet-510dd80b"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsMountTarget1"
+      }
+    },
+    "MyVSCodeFargateEfsFileSystemEfsMountTarget27268015B": {
+      "Type": "AWS::EFS::MountTarget",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "MyVSCodeFargateEfsFileSystemF58ED89A"
+        },
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+              "GroupId"
+            ]
+          }
+        ],
+        "SubnetId": "subnet-ff7d439a"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsMountTarget2"
+      }
+    },
+    "MyVSCodeFargateEfsFileSystemEfsMountTarget3629DA87B": {
+      "Type": "AWS::EFS::MountTarget",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "MyVSCodeFargateEfsFileSystemF58ED89A"
+        },
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+              "GroupId"
+            ]
+          }
+        ],
+        "SubnetId": "subnet-b089569c"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsMountTarget3"
+      }
+    },
+    "MyVSCodeFargateEfsFileSystemEfsMountTarget466677205": {
+      "Type": "AWS::EFS::MountTarget",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "MyVSCodeFargateEfsFileSystemF58ED89A"
+        },
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+              "GroupId"
+            ]
+          }
+        ],
+        "SubnetId": "subnet-808308c8"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsMountTarget4"
+      }
+    },
+    "MyVSCodeFargateEfsFileSystemEfsMountTarget5C739343F": {
+      "Type": "AWS::EFS::MountTarget",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "MyVSCodeFargateEfsFileSystemF58ED89A"
+        },
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+              "GroupId"
+            ]
+          }
+        ],
+        "SubnetId": "subnet-8a684cb6"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsMountTarget5"
+      }
+    },
+    "MyVSCodeFargateEfsFileSystemEfsMountTarget6C2943610": {
+      "Type": "AWS::EFS::MountTarget",
+      "Properties": {
+        "FileSystemId": {
+          "Ref": "MyVSCodeFargateEfsFileSystemF58ED89A"
+        },
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+              "GroupId"
+            ]
+          }
+        ],
+        "SubnetId": "subnet-11f79a1d"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/EfsFileSystem/EfsMountTarget6"
+      }
+    },
+    "MyVSCodeFargateSecret6C64F286": {
+      "Type": "AWS::SecretsManager::Secret",
+      "Properties": {
+        "GenerateSecretString": {}
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Secret/Resource"
+      }
+    },
+    "MyVSCodeFargateLogGroup67C6A39B": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/app/my-test-stack-vscode-aws-apted-io/MyVSCodeFargate",
+        "RetentionInDays": 60
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/LogGroup/Resource"
+      }
+    },
+    "MyVSCodeFargateServiceLB7AC67843": {
+      "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Properties": {
+        "LoadBalancerAttributes": [
+          {
+            "Key": "deletion_protection.enabled",
+            "Value": "false"
+          }
+        ],
+        "Scheme": "internet-facing",
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "MyVSCodeFargateServiceLBSecurityGroup8B96CF18",
+              "GroupId"
+            ]
+          }
+        ],
+        "Subnets": [
+          "subnet-510dd80b",
+          "subnet-ff7d439a",
+          "subnet-b089569c",
+          "subnet-808308c8",
+          "subnet-8a684cb6",
+          "subnet-11f79a1d"
+        ],
+        "Type": "application"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/Resource"
+      }
+    },
+    "MyVSCodeFargateServiceLBSecurityGroup8B96CF18": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Automatically created Security Group for ELB myteststackvscodeawsaptedioMyVSCodeFargateServiceLBC7F484CA",
+        "SecurityGroupIngress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow from anyone on port 443",
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "ToPort": 443
+          },
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow from anyone on port 80",
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "ToPort": 80
+          }
+        ],
+        "VpcId": "vpc-918b41e8"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/SecurityGroup/Resource"
+      }
+    },
+    "MyVSCodeFargateServiceLBSecurityGrouptomyteststackvscodeawsaptedioMyVSCodeFargateServiceSecurityGroup69FAAD3C8443E621E03E": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Fn::GetAtt": [
+            "MyVSCodeFargateServiceLBSecurityGroup8B96CF18",
+            "GroupId"
+          ]
+        },
+        "IpProtocol": "tcp",
+        "Description": "Load balancer to target",
+        "DestinationSecurityGroupId": {
+          "Fn::GetAtt": [
+            "MyVSCodeFargateServiceSecurityGroup632347FD",
+            "GroupId"
+          ]
+        },
+        "FromPort": 8443,
+        "ToPort": 8443
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/SecurityGroup/to myteststackvscodeawsaptedioMyVSCodeFargateServiceSecurityGroup69FAAD3C:8443"
+      }
+    },
+    "MyVSCodeFargateServiceLBPublicListener820FD2AD": {
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+      "Properties": {
+        "DefaultActions": [
+          {
+            "TargetGroupArn": {
+              "Ref": "MyVSCodeFargateServiceLBPublicListenerECSGroup8180DE73"
+            },
+            "Type": "forward"
+          }
+        ],
+        "LoadBalancerArn": {
+          "Ref": "MyVSCodeFargateServiceLB7AC67843"
+        },
+        "Certificates": [
+          {
+            "CertificateArn": {
+              "Ref": "MyVSCodeFargateCertificateC28C16BA"
+            }
+          }
+        ],
+        "Port": 443,
+        "Protocol": "HTTPS"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/PublicListener/Resource"
+      }
+    },
+    "MyVSCodeFargateServiceLBPublicListenerECSGroup8180DE73": {
+      "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Properties": {
+        "HealthCheckPath": "/login",
+        "Port": 80,
+        "Protocol": "HTTP",
+        "TargetType": "ip",
+        "VpcId": "vpc-918b41e8"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/PublicListener/ECSGroup/Resource"
+      }
+    },
+    "MyVSCodeFargateServiceLBPublicRedirectListener44AC0E9F": {
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+      "Properties": {
+        "DefaultActions": [
+          {
+            "RedirectConfig": {
+              "Port": "443",
+              "Protocol": "HTTPS",
+              "StatusCode": "HTTP_301"
+            },
+            "Type": "redirect"
+          }
+        ],
+        "LoadBalancerArn": {
+          "Ref": "MyVSCodeFargateServiceLB7AC67843"
+        },
+        "Port": 80,
+        "Protocol": "HTTP"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/LB/PublicRedirectListener/Resource"
+      }
+    },
+    "MyVSCodeFargateServiceDNSF7EFBAE6": {
+      "Type": "AWS::Route53::RecordSet",
+      "Properties": {
+        "Name": "vscode.aws.apted.io.",
+        "Type": "A",
+        "AliasTarget": {
+          "DNSName": {
+            "Fn::Join": [
+              "",
+              [
+                "dualstack.",
+                {
+                  "Fn::GetAtt": [
+                    "MyVSCodeFargateServiceLB7AC67843",
+                    "DNSName"
+                  ]
+                }
+              ]
+            ]
+          },
+          "HostedZoneId": {
+            "Fn::GetAtt": [
+              "MyVSCodeFargateServiceLB7AC67843",
+              "CanonicalHostedZoneID"
+            ]
+          }
+        },
+        "HostedZoneId": "ZXCHXKBGOLSRQ"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/DNS/Resource"
+      }
+    },
+    "MyVSCodeFargateServiceTaskDefTaskRole94C75545": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/TaskDef/TaskRole/Resource"
+      }
+    },
+    "MyVSCodeFargateServiceTaskDefBF622930": {
+      "Type": "AWS::ECS::TaskDefinition",
+      "Properties": {
+        "ContainerDefinitions": [
+          {
+            "Essential": true,
+            "Image": "ghcr.io/linuxserver/code-server",
+            "LogConfiguration": {
+              "LogDriver": "awslogs",
+              "Options": {
+                "awslogs-group": {
+                  "Ref": "MyVSCodeFargateLogGroup67C6A39B"
+                },
+                "awslogs-stream-prefix": "app",
+                "awslogs-region": "us-east-1"
+              }
+            },
+            "MountPoints": [
+              {
+                "ContainerPath": "/efs",
+                "ReadOnly": true,
+                "SourceVolume": "myHomeVolume"
+              }
+            ],
+            "Name": "web",
+            "PortMappings": [
+              {
+                "ContainerPort": 8443,
+                "Protocol": "tcp"
+              }
+            ],
+            "Secrets": [
+              {
+                "Name": "PASSWORD",
+                "ValueFrom": {
+                  "Ref": "MyVSCodeFargateSecret6C64F286"
+                }
+              }
+            ]
+          }
+        ],
+        "Cpu": "1024",
+        "ExecutionRoleArn": {
+          "Fn::GetAtt": [
+            "MyVSCodeFargateServiceTaskDefExecutionRoleE4DA0E0C",
+            "Arn"
+          ]
+        },
+        "Family": "myteststackvscodeawsaptedioMyVSCodeFargateServiceTaskDef80F9C9F3",
+        "Memory": "2048",
+        "NetworkMode": "awsvpc",
+        "RequiresCompatibilities": [
+          "FARGATE"
+        ],
+        "TaskRoleArn": {
+          "Fn::GetAtt": [
+            "MyVSCodeFargateServiceTaskDefTaskRole94C75545",
+            "Arn"
+          ]
+        },
+        "Volumes": [
+          {
+            "Name": "myHomeVolume",
+            "EfsVolumeConfiguration": {
+              "FileSystemId": {
+                "Ref": "MyVSCodeFargateEfsFileSystemF58ED89A"
+              }
+            }
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/TaskDef/Resource"
+      }
+    },
+    "MyVSCodeFargateServiceTaskDefExecutionRoleE4DA0E0C": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/TaskDef/ExecutionRole/Resource"
+      }
+    },
+    "MyVSCodeFargateServiceTaskDefExecutionRoleDefaultPolicyF63D4CD8": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "MyVSCodeFargateLogGroup67C6A39B",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": [
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:DescribeSecret"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Ref": "MyVSCodeFargateSecret6C64F286"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "MyVSCodeFargateServiceTaskDefExecutionRoleDefaultPolicyF63D4CD8",
+        "Roles": [
+          {
+            "Ref": "MyVSCodeFargateServiceTaskDefExecutionRoleE4DA0E0C"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/TaskDef/ExecutionRole/DefaultPolicy/Resource"
+      }
+    },
+    "MyVSCodeFargateService3D48D41D": {
+      "Type": "AWS::ECS::Service",
+      "Properties": {
+        "Cluster": {
+          "Ref": "MyVSCodeFargateCluster0CA81BA8"
+        },
+        "DeploymentConfiguration": {
+          "MaximumPercent": 200,
+          "MinimumHealthyPercent": 50
+        },
+        "DesiredCount": 1,
+        "EnableECSManagedTags": false,
+        "HealthCheckGracePeriodSeconds": 60,
+        "LaunchType": "FARGATE",
+        "LoadBalancers": [
+          {
+            "ContainerName": "web",
+            "ContainerPort": 8443,
+            "TargetGroupArn": {
+              "Ref": "MyVSCodeFargateServiceLBPublicListenerECSGroup8180DE73"
+            }
+          }
+        ],
+        "NetworkConfiguration": {
+          "AwsvpcConfiguration": {
+            "AssignPublicIp": "ENABLED",
+            "SecurityGroups": [
+              {
+                "Fn::GetAtt": [
+                  "MyVSCodeFargateServiceSecurityGroup632347FD",
+                  "GroupId"
+                ]
+              }
+            ],
+            "Subnets": [
+              "subnet-510dd80b",
+              "subnet-ff7d439a",
+              "subnet-b089569c",
+              "subnet-808308c8",
+              "subnet-8a684cb6",
+              "subnet-11f79a1d"
+            ]
+          }
+        },
+        "PlatformVersion": "1.4.0",
+        "TaskDefinition": {
+          "Ref": "MyVSCodeFargateServiceTaskDefBF622930"
+        }
+      },
+      "DependsOn": [
+        "MyVSCodeFargateServiceLBPublicListenerECSGroup8180DE73",
+        "MyVSCodeFargateServiceLBPublicListener820FD2AD"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/Service/Service"
+      }
+    },
+    "MyVSCodeFargateServiceSecurityGroup632347FD": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/Service/SecurityGroup",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "VpcId": "vpc-918b41e8"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/Service/SecurityGroup/Resource"
+      }
+    },
+    "MyVSCodeFargateServiceSecurityGroupfrommyteststackvscodeawsaptedioMyVSCodeFargateServiceLBSecurityGroupDCFD39CD8443FD5F1C87": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "IpProtocol": "tcp",
+        "Description": "Load balancer to target",
+        "FromPort": 8443,
+        "GroupId": {
+          "Fn::GetAtt": [
+            "MyVSCodeFargateServiceSecurityGroup632347FD",
+            "GroupId"
+          ]
+        },
+        "SourceSecurityGroupId": {
+          "Fn::GetAtt": [
+            "MyVSCodeFargateServiceLBSecurityGroup8B96CF18",
+            "GroupId"
+          ]
+        },
+        "ToPort": 8443
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/Service/SecurityGroup/from myteststackvscodeawsaptedioMyVSCodeFargateServiceLBSecurityGroupDCFD39CD:8443"
+      }
+    },
+    "MyVSCodeFargateServiceSecurityGroupfrommyteststackvscodeawsaptedioMyVSCodeFargateEfsFileSystemEfsSecurityGroup30EE0BF02049F8F2DC5C": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "IpProtocol": "tcp",
+        "Description": "from myteststackvscodeawsaptedioMyVSCodeFargateEfsFileSystemEfsSecurityGroup30EE0BF0:2049",
+        "FromPort": 2049,
+        "GroupId": {
+          "Fn::GetAtt": [
+            "MyVSCodeFargateServiceSecurityGroup632347FD",
+            "GroupId"
+          ]
+        },
+        "SourceSecurityGroupId": {
+          "Fn::GetAtt": [
+            "MyVSCodeFargateEfsFileSystemEfsSecurityGroupFB117A68",
+            "GroupId"
+          ]
+        },
+        "ToPort": 2049
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/MyVSCodeFargate/Service/Service/SecurityGroup/from myteststackvscodeawsaptedioMyVSCodeFargateEfsFileSystemEfsSecurityGroup30EE0BF0:2049"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAAE31SwU7DMAz9Fu5dtg44cAMGQ0hDoJYfCKlbZUuTynGGpqr/jtN2owzEpbGfn/Ps16QiXVyJxcWt/PQzVezmrXIIos1Jql2SgXcBFSSr0r4GagIlK2c9YVAUsWO9S2J7qwBJl1pJglpaWQGKdvWNxY5J2iWgPBNM8ATYF8dwLbFiwrv0uwcotdWknY2Ec8RZktoCTrCxNwfc62HwMWS5kuXW2kB+YJk61n5mLy5YeucLgOJwS7YBVEBNhyd0oRku+w94thWC97/wxx7uEg8KgfzJnLzPRzpGVeMqHnLjqpPAMe7tmjWS2CHrxV3TmGgj77xxsriXRloFxdn6YKQnrQwzPnqGttWe9/q7Gwe9ST7labbJjpxjPKkPvp3GnqRdwl+C60vWzYDfVzG8nRjlcWkta9FmzvS/qz/fHF97iOkQdV2XWFeA2Pr5Pl2K9Ibf7NZrPUP+ZboGkQ3nFyfpGufQAgAA"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-test-stack-vscode-aws-apted-io/CDKMetadata/Default"
+      }
+    }
+  },
+  "Outputs": {
+    "MyVSCodeFargateServiceLoadBalancerDNSD6C2B8B8": {
+      "Value": {
+        "Fn::GetAtt": [
+          "MyVSCodeFargateServiceLB7AC67843",
+          "DNSName"
+        ]
+      }
+    },
+    "MyVSCodeFargateServiceServiceURL70401BBD": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "MyVSCodeFargateServiceDNSF7EFBAE6"
+            }
+          ]
+        ]
+      }
+    }
+  }
+}
