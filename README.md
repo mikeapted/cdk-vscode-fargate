@@ -27,7 +27,7 @@ $ yarn add cdk-vscode-fargate
 
 # AWS CDK sample
 
-Building your serverless Laravel with `VSCodeFargate` construct:
+Building your serverless VS Code service with the `VSCodeFargate` construct:
 
 Update `./lib/my-vscode-fargate-stack.ts`
 
