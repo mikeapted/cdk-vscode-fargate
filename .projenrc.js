@@ -19,6 +19,10 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-secretsmanager',
   ],
   gitignore: ['cdk.out', 'cdk.context.json'],
+  python: {
+    distName: 'cdk-vscode-fargate',
+    module: 'cdk_vscode_fargate'
+  },
 
   // cdkDependencies: undefined,        /* Which AWS CDK modules (those that start with "@aws-cdk/") does this library require when consumed? */
   // cdkTestDependencies: undefined,    /* AWS CDK modules required for testing. */
