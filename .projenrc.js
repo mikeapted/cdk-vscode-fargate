@@ -21,7 +21,7 @@ const project = new AwsCdkConstructLibrary({
   gitignore: ['cdk.out', 'cdk.context.json'],
   python: {
     distName: 'cdk-vscode-fargate',
-    module: 'cdk_vscode_fargate'
+    module: 'cdk_vscode_fargate',
   },
 
   // cdkDependencies: undefined,        /* Which AWS CDK modules (those that start with "@aws-cdk/") does this library require when consumed? */
