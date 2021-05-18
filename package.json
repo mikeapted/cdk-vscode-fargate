@@ -2,7 +2,7 @@
   "name": "cdk-vscode-fargate",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mikapted/cdk-vscode-fargate.git"
+    "url": "https://github.com/mikeapted/cdk-vscode-fargate.git"
   },
   "scripts": {
     "clobber": "npx projen clobber",

@@ -5,7 +5,7 @@ const project = new AwsCdkConstructLibrary({
   cdkVersion: '1.104.0',
   defaultReleaseBranch: 'main',
   name: 'cdk-vscode-fargate',
-  repositoryUrl: 'https://github.com/mikapted/cdk-vscode-fargate.git',
+  repositoryUrl: 'https://github.com/mikeapted/cdk-vscode-fargate.git',
   cdkDependencies: [
     '@aws-cdk/core',
     '@aws-cdk/aws-certificatemanager',
