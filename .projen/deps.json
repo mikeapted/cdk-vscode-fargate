@@ -2,7 +2,7 @@
   "dependencies": [
     {
       "name": "@aws-cdk/assert",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "build"
     },
     {
@@ -87,52 +87,52 @@
     },
     {
       "name": "@aws-cdk/aws-certificatemanager",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-ec2",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-ecs-patterns",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-ecs",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-efs",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-kms",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-logs",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-route53",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-secretsmanager",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "peer"
     },
     {
@@ -142,52 +142,52 @@
     },
     {
       "name": "@aws-cdk/aws-certificatemanager",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-ec2",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-ecs-patterns",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-ecs",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-efs",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-kms",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-logs",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-route53",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-secretsmanager",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.104.0",
+      "version": "^1.105.0",
       "type": "runtime"
     }
   ],
