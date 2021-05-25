@@ -13,6 +13,8 @@ By deploying the `VSCodeFargate` construct, the following resources will be crea
 6. Security Groups
 7. Secrets Manager secret (for login authorization)
 
+![diagram](./diagram.png)
+
 ## Howto
 
 Create a new project with AWS CDK

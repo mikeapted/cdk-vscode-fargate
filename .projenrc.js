@@ -33,4 +33,7 @@ const project = new AwsCdkConstructLibrary({
   // projectType: ProjectType.UNKNOWN,  /* Which type of project this is (library/app). */
   // releaseWorkflow: undefined,        /* Define a GitHub workflow for releasing from "main" when new versions are bumped. */
 });
+
+project.gitignore.addPatterns('cdk.context.json'); // should never be committed for a construct library
+
 project.synth();

@@ -12,7 +12,7 @@ const env = {
 const subdomain = process.env.VSCODE_SUBDOMAIN ?? 'vscode';
 const domainName = process.env.VSCODE_DOMAIN_NAME ?? 'mydomain.com';
 
-const stack = new cdk.Stack(app, `my-test-stack-${subdomain}-${domainName.replace(/\./g, '-')}`, {
+const stack = new cdk.Stack(app, 'example-stack', {
   env,
 });
 
@@ -25,3 +25,5 @@ new VSCodeFargate(stack, 'MyVSCodeFargate', {
   subdomain,
   vpc,
 });
+
+app.synth();
