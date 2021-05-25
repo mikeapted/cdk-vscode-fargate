@@ -6,7 +6,7 @@
 By deploying the `VSCodeFargate` construct, the following resources will be created:
 
 1. VPC (if not passed in as a prop)
-2. ACM DNS validated ceretificate
+2. ACM DNS validated certificate
 3. ECS Cluster
 4. EFS file system
 5. ALB Fargate Service
