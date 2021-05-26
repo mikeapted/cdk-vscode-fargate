@@ -9,11 +9,44 @@ import * as secretsmanager from '@aws-cdk/aws-secretsmanager';
 import * as cdk from '@aws-cdk/core';
 
 export interface VSCodeFargateProps {
+  /**
+   * An optional HostedZone to use. If not provided, then `domainName` is used to look one up using context
+   *
+   * @optional
+   */
+  readonly hostedZone?: route53.IHostedZone;
+  /**
+   * An optional container image to use. If not provided, then 'ghcr.io/linuxserver/code-server' is used.
+   *
+   * @default ghcr.io/linuxserver/code-server
+   */
+  readonly containerImage?: string;
+
+  /**
+   * A subdomain for the new endpoint.
+   * @example vscode
+   */
   readonly subdomain: string;
+
+  /**
+   * A full domain to register the new endpoint in.
+   *
+   * @example myprojects.com
+   */
   readonly domainName: string;
+
+  /**
+   * An optional VPC to put ECS in
+   *
+   * @default default VPC from lookup
+   */
   readonly vpc?: ec2.IVpc;
 }
 
+/**
+ * A construct that consists of an ECS Service and related infrastructure to host a VSCode instance using
+ * a container (defaults to ghcr.io/linuxserver/code-server). Data is persisted via an EFS volume.
+ */
 export class VSCodeFargate extends cdk.Construct {
   readonly endpoint: string;
 
@@ -22,7 +55,7 @@ export class VSCodeFargate extends cdk.Construct {
 
     const stack = cdk.Stack.of(this);
 
-    const hostedZone = route53.HostedZone.fromLookup(this, 'HostedZone', {
+    const hostedZone = props.hostedZone ?? route53.HostedZone.fromLookup(this, 'HostedZone', {
       domainName: props.domainName,
     });
 
@@ -71,7 +104,7 @@ export class VSCodeFargate extends cdk.Construct {
         secrets: {
           PASSWORD: ecs.Secret.fromSecretsManager(secret),
         },
-        image: ecs.ContainerImage.fromRegistry('ghcr.io/linuxserver/code-server'),
+        image: ecs.ContainerImage.fromRegistry(props.containerImage ?? 'ghcr.io/linuxserver/code-server'),
         logDriver: new ecs.AwsLogDriver({
           streamPrefix: 'app',
           logGroup: new logs.LogGroup(this, 'LogGroup', {
