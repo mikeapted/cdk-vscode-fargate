@@ -18,7 +18,7 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-route53',
     '@aws-cdk/aws-secretsmanager',
   ],
-  gitignore: ['cdk.out', 'cdk.context.json'],
+  gitignore: ['cdk.out', 'cdk.context.json', 'diagram.png.dot'],
   python: {
     distName: 'cdk-vscode-fargate',
     module: 'cdk_vscode_fargate',
