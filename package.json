@@ -31,7 +31,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.106.0",
+    "@aws-cdk/assert": "^1.106.1",
     "@types/jest": "^26.0.23",
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
@@ -54,29 +54,29 @@
     "typescript": "^4.3.2"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-certificatemanager": "^1.106.0",
-    "@aws-cdk/aws-ec2": "^1.106.0",
-    "@aws-cdk/aws-ecs": "^1.106.0",
-    "@aws-cdk/aws-ecs-patterns": "^1.106.0",
-    "@aws-cdk/aws-efs": "^1.106.0",
-    "@aws-cdk/aws-kms": "^1.106.0",
-    "@aws-cdk/aws-logs": "^1.106.0",
-    "@aws-cdk/aws-route53": "^1.106.0",
-    "@aws-cdk/aws-secretsmanager": "^1.106.0",
-    "@aws-cdk/core": "^1.106.0",
+    "@aws-cdk/aws-certificatemanager": "^1.106.1",
+    "@aws-cdk/aws-ec2": "^1.106.1",
+    "@aws-cdk/aws-ecs": "^1.106.1",
+    "@aws-cdk/aws-ecs-patterns": "^1.106.1",
+    "@aws-cdk/aws-efs": "^1.106.1",
+    "@aws-cdk/aws-kms": "^1.106.1",
+    "@aws-cdk/aws-logs": "^1.106.1",
+    "@aws-cdk/aws-route53": "^1.106.1",
+    "@aws-cdk/aws-secretsmanager": "^1.106.1",
+    "@aws-cdk/core": "^1.106.1",
     "constructs": "^3.2.27"
   },
   "dependencies": {
-    "@aws-cdk/aws-certificatemanager": "^1.106.0",
-    "@aws-cdk/aws-ec2": "^1.106.0",
-    "@aws-cdk/aws-ecs": "^1.106.0",
-    "@aws-cdk/aws-ecs-patterns": "^1.106.0",
-    "@aws-cdk/aws-efs": "^1.106.0",
-    "@aws-cdk/aws-kms": "^1.106.0",
-    "@aws-cdk/aws-logs": "^1.106.0",
-    "@aws-cdk/aws-route53": "^1.106.0",
-    "@aws-cdk/aws-secretsmanager": "^1.106.0",
-    "@aws-cdk/core": "^1.106.0"
+    "@aws-cdk/aws-certificatemanager": "^1.106.1",
+    "@aws-cdk/aws-ec2": "^1.106.1",
+    "@aws-cdk/aws-ecs": "^1.106.1",
+    "@aws-cdk/aws-ecs-patterns": "^1.106.1",
+    "@aws-cdk/aws-efs": "^1.106.1",
+    "@aws-cdk/aws-kms": "^1.106.1",
+    "@aws-cdk/aws-logs": "^1.106.1",
+    "@aws-cdk/aws-route53": "^1.106.1",
+    "@aws-cdk/aws-secretsmanager": "^1.106.1",
+    "@aws-cdk/core": "^1.106.1"
   },
   "bundledDependencies": [],
   "keywords": [

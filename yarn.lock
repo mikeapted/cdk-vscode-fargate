@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@aws-cdk/assert@^1.106.0":
+"@aws-cdk/assert@^1.106.1":
   version "1.106.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/assert/-/assert-1.106.1.tgz#0a0333423ca97da6478148a7765a02342fd3b023"
   integrity sha512-5GlTUzbVI9BqGxlNRAscp1wSvmGW7ydUYSo+fQwe52v+v1dVOrZeCUJI3e3YWRh2UN8iYC6qN18sGRd/o1aHrQ==
@@ -90,7 +90,7 @@
     "@aws-cdk/core" "1.106.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-certificatemanager@1.106.1", "@aws-cdk/aws-certificatemanager@^1.106.0":
+"@aws-cdk/aws-certificatemanager@1.106.1", "@aws-cdk/aws-certificatemanager@^1.106.1":
   version "1.106.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-certificatemanager/-/aws-certificatemanager-1.106.1.tgz#5d265193599d32a21ea331402fdcdd61940d9c91"
   integrity sha512-1HKhdK98qR71ftYG2wIblD3DUNaT9JspSTZHVlTHZzZJczbRl+SgiiVqdnz0JjbUQi1P3bhhZd9Pw2o2w9xaZQ==
@@ -205,7 +205,7 @@
     constructs "^3.3.69"
     punycode "^2.1.1"
 
-"@aws-cdk/aws-ec2@1.106.1", "@aws-cdk/aws-ec2@^1.106.0":
+"@aws-cdk/aws-ec2@1.106.1", "@aws-cdk/aws-ec2@^1.106.1":
   version "1.106.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-ec2/-/aws-ec2-1.106.1.tgz#1e0b2d7ea155c74aecb77e8fae59524870c66b16"
   integrity sha512-OKtzinXD3UNrgCgmIsNiWy6soLLR7q9Ez3QoNKh+OSOiyRUcdyt8VsG0ucFoZnV63aCTcT1ooofmytKab7ArJQ==
@@ -247,7 +247,7 @@
     "@aws-cdk/core" "1.106.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-ecs-patterns@^1.106.0":
+"@aws-cdk/aws-ecs-patterns@^1.106.1":
   version "1.106.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-ecs-patterns/-/aws-ecs-patterns-1.106.1.tgz#f10b613411244d5467582c74acb192543402c1da"
   integrity sha512-mzwzWCq7LuZdtHT9JLZe/HH/G05fXCauuYTPo4Eiqw5CMJ7NIJULsF5AxhJD949iEarNO19ft8/o7uuOJUvoRA==
@@ -268,7 +268,7 @@
     "@aws-cdk/cx-api" "1.106.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-ecs@1.106.1", "@aws-cdk/aws-ecs@^1.106.0":
+"@aws-cdk/aws-ecs@1.106.1", "@aws-cdk/aws-ecs@^1.106.1":
   version "1.106.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-ecs/-/aws-ecs-1.106.1.tgz#10f303457bd17bb72248784f8be8d3a84931056a"
   integrity sha512-c3MYT5mpJTkh4mPG26BDqfmY3EXWbv5lh20wQFCw015gSDbmullHhnWMsZvFUgzGBPLr2AhXv1+fXUjhEqKzrg==
@@ -300,7 +300,7 @@
     "@aws-cdk/cx-api" "1.106.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-efs@1.106.1", "@aws-cdk/aws-efs@^1.106.0":
+"@aws-cdk/aws-efs@1.106.1", "@aws-cdk/aws-efs@^1.106.1":
   version "1.106.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-efs/-/aws-efs-1.106.1.tgz#bd0a5f1b272ff1c874fc3c7f076bfe3eed49f458"
   integrity sha512-oX24dww3hMkDDxbiNwmbIyHgRdgDII5WfuLUxTCyin4KlwvN/0+MkoyfrzNFmKOSS906vzAMHO17QCcv13W0Xw==
@@ -411,7 +411,7 @@
     "@aws-cdk/core" "1.106.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-kms@1.106.1", "@aws-cdk/aws-kms@^1.106.0":
+"@aws-cdk/aws-kms@1.106.1", "@aws-cdk/aws-kms@^1.106.1":
   version "1.106.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-kms/-/aws-kms-1.106.1.tgz#77df2e8018ec88aaf87a3437c1e1e67d4bed7f98"
   integrity sha512-qTN6ywmYAgT1k7GCnZUbpLyazSezqtPOdJM4wrJfUHlONZ/VlxVoLYghrdDWsPpChz0DNJNBHaiDDMzotzZaqA==
@@ -445,7 +445,7 @@
     "@aws-cdk/cx-api" "1.106.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-logs@1.106.1", "@aws-cdk/aws-logs@^1.106.0":
+"@aws-cdk/aws-logs@1.106.1", "@aws-cdk/aws-logs@^1.106.1":
   version "1.106.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-logs/-/aws-logs-1.106.1.tgz#e2443599ee5aa3715682e03e56593e270045b114"
   integrity sha512-/i2bg0Dx9T9nR52p6fmV+iJJY46Vb0hTwrQSwIY6Xav8+JAphuvsTz/9JVNj9zxVp0zjLgGetI11N6wux3aIrQ==
@@ -476,7 +476,7 @@
     "@aws-cdk/region-info" "1.106.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-route53@1.106.1", "@aws-cdk/aws-route53@^1.106.0":
+"@aws-cdk/aws-route53@1.106.1", "@aws-cdk/aws-route53@^1.106.1":
   version "1.106.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-route53/-/aws-route53-1.106.1.tgz#85fb54623ba675c47f66e5c538904de2996ca237"
   integrity sha512-hZTCblQqP3QM5HaVkTBZnw76Rsc7wJ2cjhr+PbNAVisLQerxJIsO9W5YXWTx72Lu+jQRUPDGAtqnVlWOIwRqXw==
@@ -522,7 +522,7 @@
     "@aws-cdk/core" "1.106.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-secretsmanager@1.106.1", "@aws-cdk/aws-secretsmanager@^1.106.0":
+"@aws-cdk/aws-secretsmanager@1.106.1", "@aws-cdk/aws-secretsmanager@^1.106.1":
   version "1.106.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-secretsmanager/-/aws-secretsmanager-1.106.1.tgz#ec7f67836c3aa37843dcb58bef732394d1a756a8"
   integrity sha512-IpBqeb8fIuAVsbyRuGeAHRtyk4ud3hPjb3QHsfx5j7NT2HnDOaYCiOVkCinDCTJ+KQj1TOFa+n5IDvyJ+hT0jg==
@@ -643,7 +643,7 @@
     string-width "^4.2.2"
     table "^6.7.1"
 
-"@aws-cdk/core@1.106.1", "@aws-cdk/core@^1.106.0":
+"@aws-cdk/core@1.106.1", "@aws-cdk/core@^1.106.1":
   version "1.106.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/core/-/core-1.106.1.tgz#b2fdfee56254596cb88bd3abe7424d873b860a39"
   integrity sha512-DX7dwe3GCFWpvQRqt0JQK93+XkQSrwWHs+5u416aQCWyADeLONhLBNO6DRdZeevzcKD4TUeHr/7rCxfUHTu85A==
