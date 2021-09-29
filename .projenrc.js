@@ -2,7 +2,7 @@ const { AwsCdkConstructLibrary } = require('projen');
 const project = new AwsCdkConstructLibrary({
   author: 'Mike Apted',
   authorAddress: 'mike.apted@gmail.com',
-  cdkVersion: '1.106.1',
+  cdkVersion: '1.124.0',
   defaultReleaseBranch: 'main',
   name: 'cdk-vscode-fargate',
   repositoryUrl: 'https://github.com/mikeapted/cdk-vscode-fargate.git',
